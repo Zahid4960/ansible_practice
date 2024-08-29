@@ -1,11 +1,8 @@
 ---
-- name: Test Ansible "Hello World"
+- name: Test Ansible
   hosts: localhost
   gather_facts: false
   tasks:
-    - name: Print "Hello World"
+    - name: Print Test Message
       debug:
-        msg: "Hello, World!hdjjdj"
-    - name: Print Test
-      debug:
-        msg: "Test!"
+        msg: "Hello, This is Ansible running from docker. Since you are getting this message, your test is successful! Yeah!"

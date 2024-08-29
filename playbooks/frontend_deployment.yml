@@ -1,0 +1,36 @@
+---
+- hosts: frontend
+  become: yes
+  tasks:
+    - name: Update apt and install prerequisites
+      apt:
+        update_cache: yes
+        force_apt_get: yes
+
+#    - name: Install Node.js
+#      apt:
+#        name: nodejs
+#        state: present
+#
+#    - name: Install npm
+#      apt:
+#        name: npm
+#        state: present
+#
+#    - name: Install Vue CLI globally using npm
+#      shell: npm install -g @vue/cli
+#
+#    - name: Clone frontend project repository
+#      git:
+#        repo: 'git@github.com:Zahid4960/demo_vuejs_frontend_for_ansible_practice.git'
+#        dest: /home/vagrant/demo_vuejs_frontend_for_ansible_practice
+#
+#    - name: Install frontend project dependencies
+#      npm:
+#        path: /home/vagrant/demo_vuejs_frontend_for_ansible_practice
+#        state: present
+#
+#    - name: Serve frontend project
+#      shell: npm run serve
+#      args:
+#        chdir: /home/vagrant/demo_vuejs_frontend_for_ansible_practice

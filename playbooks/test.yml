@@ -1,0 +1,11 @@
+---
+- name: Test Ansible "Hello World"
+  hosts: localhost
+  gather_facts: false
+  tasks:
+    - name: Print "Hello World"
+      debug:
+        msg: "Hello, World!hdjjdj"
+    - name: Print Test
+      debug:
+        msg: "Test!"

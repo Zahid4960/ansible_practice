@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  ansible:
+    image: ansible-container
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./playbooks:/app/playbooks
+      - ./inventories:/app/inventories
+      - ~/.ssh:/root/.ssh
+    environment:
+      ANSIBLE_HOST_KEY_CHECKING: "False"
+    command: >
+      ansible-playbook -i /app/inventories/inventory.ini /app/playbooks/test.yml
